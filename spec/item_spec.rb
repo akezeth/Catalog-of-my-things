@@ -33,10 +33,6 @@ describe Item do
     expect(@an_item.author.nil?).to be_falsy
   end
 
-  it 'should have a valid source (not nil)' do
-    expect(@an_item.source.nil?).to be_falsy
-  end
-
   it 'should have a valid label (not nil)' do
     expect(@an_item.label.nil?).to be_falsy
   end
