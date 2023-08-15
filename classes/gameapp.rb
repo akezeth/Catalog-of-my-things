@@ -100,6 +100,7 @@ puts "==========================================================================
         end
     end
  end
+#List all Games-----------------------
  def list_all_games
     if @games.empty?
         puts "❌ Games Not Found"
@@ -107,9 +108,20 @@ puts "==========================================================================
         puts "🎮 List of Games:"
         @games.each do |game, index|
             puts "#{index + 1}. Publlish Date: #{game.publish_date}" 
-            print "Multiplayer: #{game.multiplayer}Last played Date: #{game.last_played_date}"
+            print "Multiplayer: #{game.multiplayer} Last played Date: #{game.last_played_date}"
         end
     end
  end
- 
+ #Find existing authors-----------------------
+
+ def find_existing_author(first_name, last_name)
+    existing_author = nil
+    @authors.each do |author|
+        if(author.first_name==first_name && author.last_name==last_name)
+            existing_author = author
+            break
+        end
+    end 
+    existing_author
+ end
 end
