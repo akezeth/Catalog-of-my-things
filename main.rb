@@ -1,13 +1,12 @@
+require_relative 'app'
+
 def app_intro
   puts 'Welcome to Catalog of my things!'
+  app = App.new
   loop do
     display_options
     option = user_input
-    if option >= 1 && option < 7
-      option_methods_till6(option)
-    else
-      option_methods_above6(option)
-    end
+    app.option_methods(option)
 
     break if option == 10
   end
@@ -37,34 +36,6 @@ def user_input
   end
   puts option
   option
-end
-
-def option_methods_till6(option)
-  case option
-  when 1 then list_all_books
-  when 2 then list_all_musicAlbums
-  when 3 then list_of_games
-  when 4 then list_all_genres
-  when 5 then list_all_labels
-  when 6 then list_all_authors
-  else
-    exit_app
-  end
-end
-
-def option_methods_above6(option)
-  case option
-  when 7 then add_book
-  when 8 then add_musicAlbum
-  when 9 then add_game
-  else
-    exit_app
-  end
-end
-
-def exit_app
-  puts 'Thank you for using this app!'
-  exit
 end
 
 app_intro
