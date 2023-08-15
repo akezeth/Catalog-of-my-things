@@ -123,6 +123,12 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
+👤 **Aklilu Mekonnen**
+
+- GitHub: [@akezeth](https://github.com/akezeth)
+- Twitter: [@akezeth](https://twitter.com/akezeth)
+- LinkedIn: [Aklilu Mekonnen](https://www.linkedin.com/in/aklilu-mekonnen/)
+
 👤 **Binod Bhusal**
 
 - GitHub: [@githubhandle](https://github.com/binodbhusal)
