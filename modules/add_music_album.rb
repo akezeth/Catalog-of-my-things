@@ -1,8 +1,8 @@
-module AddMusicAlbum
-  def add_musicAlbum
+module AddMusic
+  def add_music
     publish_date = input_date
     on_spotify = input_on_spotify
-    music_ablum = MusicAlbum.new(publish_date: publish_date, on_spotify: on_spotify)
+    music_ablum = Music.new(publish_date: publish_date, on_spotify: on_spotify)
     @music_albums << music_ablum
     genre = add_genre
     music_ablum.add_genre(genre)
@@ -11,9 +11,9 @@ module AddMusicAlbum
 
   def input_date
     print 'Publish date: '
-    publish_date = gets.chomp
+    gets.chomp
   end
-  
+
   def input_on_spotify
     print 'Is it on spotify [Y/N]'
     on_spotify = gets.chomp.upcase
@@ -29,8 +29,8 @@ module AddMusicAlbum
     print 'Enter the name of Genre: '
     name = gets.chomp
     @genres.each do |genre|
-      if genre.name.include?(name)
-        return genre
+      return genre if genre.name.include?(name)
+    end
     new_genre = Genre.new(name: name)
     @genres << new_genre
     new_genre
