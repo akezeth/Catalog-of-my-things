@@ -18,6 +18,19 @@ def load_authors
   @authors << author
   end
 end
+#Load Games----------------------------
+    def load_games
+        return unless File.exist?('data/games.json')
+        games_data = JSON.parse(File.read('data/games.json'))
+        games_data.each do |game_data|
+        game_data = Game.new(
+            publish_date:game_data[:publish_date],
+            multiplayer:game_data[:multiplayer],
+            played_at_date:game_data[:played_at_date]
+        )
+        @games << game
+        end
+    end
   # Add authors-----------------------------
   def add_author
     puts 'Type the Author [First Name]: '
