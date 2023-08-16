@@ -8,7 +8,16 @@ class GameApp
     @authors = []
     @games = []
   end
-
+#Load Authors------------------------
+def load_authors
+  return [] unless File.exist?('data/authors.json')
+  authors_data = JSON.parse(File.read('data/authors.json'))
+  authors_data.each do |author_data|
+  author_data = Author.new(first_name:author_data['first_name'],last_name:author_data['last_name'])
+  author.id =  author_data['id']
+  @authors << author
+  end
+end
   # Add authors-----------------------------
   def add_author
     puts 'Type the Author [First Name]: '
