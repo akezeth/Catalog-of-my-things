@@ -17,4 +17,15 @@ module SaveBookAndLabelData
     end
     save_to_file('data/book.json', books_hash)
   end
+
+  def save_label
+    label_hash = @label.map do |label|
+      {
+        id: label.id,
+        color: label.color,
+        title: label.title
+      }
+    end
+    save_to_file('data/label.json', label_hash)
+  end
 end
