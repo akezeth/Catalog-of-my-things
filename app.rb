@@ -9,10 +9,10 @@ class App
     @books = []
     @music_albums = []
     @gameapp = GameApp.new
-    @games = []
+    @games = @gameapp.load_games
     @genres = []
     @labels = []
-    @authors = []
+    @authors = @gameapp.load_authors
   end
 
   def option_methods(option)
@@ -57,6 +57,8 @@ class App
         @gameapp.display_msg
         break unless @gameapp.continue_option == 'y'
       end
+      @gameapp.save_games
+      @gameapp.save_authors
     end
   end
 

@@ -8,46 +8,54 @@ class GameApp
     @authors = []
     @games = []
   end
-#Load Authors------------------------
-def load_authors
-  return [] unless File.exist?('data/authors.json')
-  authors_data = JSON.parse(File.read('data/authors.json'))
-  authors_data.each do |author_data|
-  author_data = Author.new(first_name:author_data['first_name'],last_name:author_data['last_name'])
-  author.id =  author_data['id']
-  @authors << author
-  end
-end
-#Load Games----------------------------
-    def load_games
-        return unless File.exist?('data/games.json')
-        games_data = JSON.parse(File.read('data/games.json'))
-        games_data.each do |game_data|
-        game_data = Game.new(
-            publish_date:game_data[:publish_date],
-            multiplayer:game_data[:multiplayer],
-            played_at_date:game_data[:played_at_date]
-        )
-        @games << game
-        end
+
+  # Load Authors------------------------
+  def load_authors
+    return [] unless File.exist?('data/authors.json')
+
+    authors_data = JSON.parse(File.read('data/authors.json'))
+    authors_data.each do |author_data|
+      author = Author.new(first_name: author_data['first_name'], last_name: author_data['last_name'])
+      author.id = author_data['id']
+      @authors << author
     end
-    #Save Authors-------------------------
-    def save_authors
-      File.open('data/authors.json', 'w') do |file|
+  end
+
+  # Load Games----------------------------
+  def load_games
+    return unless File.exist?('data/games.json')
+
+    games_data_json = File.read('data/games.json')
+
+    games_data = JSON.parse(games_data_json, symbolize_names: true)
+    games_data.each do |game_data|
+      game = Game.new(
+        publish_date: game_data[:publish_date],
+        multiplayer: game_data[:multiplayer],
+        played_at_date: game_data[:played_at_date]
+      )
+      @games << game
+    end
+  end
+
+  # Save Authors-------------------------
+  def save_authors
+    File.open('data/authors.json', 'w') do |_file|
       File.write('data/authors.json', JSON.pretty_generate(@authors.map(&:to_hash)))
-  end
-  puts "Author data saved successfully"
+    end
+    puts 'Author data saved successfully'
   rescue StandardError => e
-      puts "Error saving author data: #{e.message}"
+    puts "Error saving author data: #{e.message}"
   end
-#Save Game-----------------------------
+
+  # Save Game-----------------------------
   def save_games
-      File.open('data/games.json', 'w') do |file|
-      File.write('data/games.json', JSON.pretty_generate(@games.map(&to_hash)))
-      end
-      puts "Game Data saved successfully"
-      rescue StandardError => e
-      puts "Error Saving game data: #{e.message}"
+    File.open('data/games.json', 'w') do |_file|
+      File.write('data/games.json', JSON.pretty_generate(@games.map(&:to_hash)))
+    end
+    puts 'Game Data saved successfully'
+  rescue StandardError => e
+    puts "Error Saving game data: #{e.message}"
   end
 
   # Add authors-----------------------------
@@ -105,8 +113,8 @@ end
     else
       puts '🎮 List of Games:'
       @games.each_with_index do |game, index|
-        print "#{index + 1}.Multiplayer: #{game.multiplayer} "
-        puts "Publlish Date: #{game.publish_date} Last played Date: #{game.played_at_date}"
+        print "#{index + 1}. Multiplayer: #{game.multiplayer},"
+        puts " Publlish Date: #{game.publish_date}, Last played Date: #{game.played_at_date}"
       end
     end
   end

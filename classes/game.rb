@@ -12,7 +12,7 @@ class Game < Item
 
   def to_hash
     {
-
+      publish_date: @publish_date,
       multiplayer: @multiplayer,
       played_at_date: @played_at_date
     }
