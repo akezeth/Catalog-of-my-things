@@ -18,4 +18,17 @@ module LoadData
       @label << label_obj
     end
   end
+
+  def load_books
+    book_hash = []
+    return book_hash unless File.exist?('data/book.json')
+
+    book_hash = load_data_from_file('data/book.json')
+    book_hash.each do |book|
+      book_obj = Book.new(book['cover_state'], book['publisher'], book['publish_date'], book['id'])
+      label_obj = @label.find { |label| label.title == book['label'] }
+      book_obj.add_label(label_obj)
+      @books << book_obj
+    end
+  end
 end
