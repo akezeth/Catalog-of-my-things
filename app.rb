@@ -52,10 +52,10 @@ class App
       puts 'add_musicAlbum'
     else
       loop do
-      @gameapp.add_game
-      @gameapp.add_author
-      @gameapp.display_msg
-      break unless @gameapp.continue_option=='y'
+        @gameapp.add_game
+        @gameapp.add_author
+        @gameapp.display_msg
+        break unless @gameapp.continue_option == 'y'
       end
     end
   end
