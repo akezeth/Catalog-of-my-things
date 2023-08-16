@@ -1,6 +1,6 @@
 require 'json'
 
-module LoadData
+module LoadBookAndLabelData
   def load_data_from_file(file_name)
     file = File.read(file_name)
     JSON.parse(file)
