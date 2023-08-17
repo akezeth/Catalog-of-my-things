@@ -22,19 +22,19 @@ module Modules
   include SaveGameAndAuthorData
 
   def load_collection
-    # load_books
-    # load_labels
-    # load_music_albums
-    # load_genres
+    load_books
+    load_labels
+    load_music_albums
+    load_genres
     load_authors
     load_games
   end
 
   def save_collection
-    # save_book
-    # save_label
-    # save_music_albums
-    # save_genres
+    save_book
+    save_label
+    save_music_albums
+    save_genres
     save_authors
     save_games
   end

@@ -35,7 +35,7 @@ module GameAndAuthor
       played_at_date: last_played_date
     )
     author = add_author
-    game.author = author
+    game.add_author(author) 
     @games << game
   end
 
