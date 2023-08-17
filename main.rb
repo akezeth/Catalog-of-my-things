@@ -34,7 +34,6 @@ def user_input
     print 'Enter a number: '
     option = gets.chomp.to_i
   end
-  # puts option
   option
 end
 

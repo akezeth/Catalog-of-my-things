@@ -16,7 +16,6 @@ module LoadBookAndLabelData
 
     label_hash.each do |label|
       label_obj = Label.new(color: label['color'], title: label['title'], id: label['id'])
-      # label_obj.id = label['id']
       @labels << label_obj
     end
   end
@@ -29,8 +28,6 @@ module LoadBookAndLabelData
     book_hash.each do |book|
       book_obj = Book.new(cover_state: book['cover_state'], publisher: book['publisher'],
                           publish_date: book['publish_date'], id: book['id'], label: book['label'])
-      # label_obj = @labels.find { |label| label.title == book['label'] }
-      # book_obj.add_label(label_obj)
       @books << book_obj
     end
   end
