@@ -2,17 +2,19 @@ require_relative 'classes/gameapp'
 require_relative 'classes/author'
 require_relative 'classes/game'
 require_relative 'classes/item'
+require_relative '../modules/module'
 
 class App
+  include Module
+
   def initialize
-    puts 'load_collections'
+    load_collection
     @books = []
-    @music_albums = []
-    @gameapp = GameApp.new
-    @games = @gameapp.load_games
-    @genres = []
     @labels = []
-    @authors = @gameapp.load_authors
+    @music_albums = []
+    @genres = []
+    @games = []
+    @authors = []
   end
 
   def option_methods(option)
@@ -30,40 +32,38 @@ class App
   def list(option)
     case option
     when 1
-      puts 'list_all_books'
+      list_all_books
     when 2
-      puts 'list_all_musicAlbums'
+      list_all_music
     when 3
-      @gameapp.list_all_games
+      list_all_games
     when 4
-      puts 'list_all_genres'
+      list_all_genres
     when 5
-      puts 'list_all_labels'
+      list_all_labels
     else
-      @gameapp.list_all_authors
+      list_all_authors
     end
   end
 
   def add(option)
     case option
     when 7
-      puts 'add_book'
+      add_book
     when 8
-      puts 'add_musicAlbum'
+      add_music
     else
       loop do
-        @gameapp.add_game
-        @gameapp.add_author
-        @gameapp.display_msg
-        break unless @gameapp.continue_option == 'y'
+        add_game
+        add_author
+        display_msg
+        break unless continue_option == 'y'
       end
-      @gameapp.save_games
-      @gameapp.save_authors
     end
   end
 
   def save_and_exit
-    puts 'save_collections'
+    save_collection
     exit
   end
 end
