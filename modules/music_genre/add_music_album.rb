@@ -2,7 +2,7 @@ module AddMusic
   def add_music
     publish_date = input_date
     on_spotify = input_on_spotify
-    music_ablum = Music.new(publish_date: publish_date, on_spotify: on_spotify)
+    music_ablum = MusicAlbum.new(publish_date: publish_date, on_spotify: on_spotify)
     @music_albums << music_ablum
     genre = add_genre
     music_ablum.add_genre(genre)
@@ -11,11 +11,11 @@ module AddMusic
 
   def input_date
     print 'Publish date: '
-    gets.chomp
+    Date.parse(gets.chomp)
   end
 
   def input_on_spotify
-    print 'Is it on spotify [Y/N]'
+    print 'Is it on spotify [Y/N]: '
     on_spotify = gets.chomp.upcase
     until on_spotify.eql?('Y') || on_spotify.eql?('N')
       print 'Invalid input. Please enter the correct option [Y/N]: '
