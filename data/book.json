@@ -5,5 +5,12 @@
     "publish_date": "2023-08-17",
     "id": 8721,
     "label": "day"
+  },
+  {
+    "cover_state": "good",
+    "publisher": "massam",
+    "publish_date": "2023-08-18",
+    "id": 9095,
+    "label": "moon"
   }
 ]

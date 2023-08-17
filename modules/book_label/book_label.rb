@@ -24,13 +24,13 @@ module BookAndLabel
     publisher = get_input('Enter Publisher')
     cover_state = get_input('Enter Cover state')
     book = Book.new(cover_state: cover_state, publisher: publisher, publish_date: publish_date)
-    label = add_label(book)
+    label = add_label
     book.label = label.title
     @books << book
     puts 'Book album Added Successfully'
   end
 
-  def add_label(_book)
+  def add_label
     puts 'Add a label'
     color = get_input('Enter Label Color')
     title = get_input('Enter Label title')
