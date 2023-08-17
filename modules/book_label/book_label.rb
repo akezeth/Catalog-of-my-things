@@ -33,7 +33,7 @@ module BookAndLabel
     gets.chomp
   end
 
-  def add_label(book)
+  def add_label(_book)
     puts 'Add a label'
     color = get_input('Enter Label Color')
     title = get_input('Enter Label title')
