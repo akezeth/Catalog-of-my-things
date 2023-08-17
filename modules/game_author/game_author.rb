@@ -34,6 +34,8 @@ module GameAndAuthor
       multiplayer: multiplayer,
       played_at_date: last_played_date
     )
+    author = add_author
+    game.add_author(author)
     @games << game
   end
 
@@ -60,6 +62,19 @@ module GameAndAuthor
         puts " Publlish Date: #{game.publish_date}, Last played Date: #{game.played_at_date}"
       end
     end
+  end
+
+  def find_existing_author(first_name, last_name)
+    existing_author = nil
+
+    @authors.each do |author|
+      if author.first_name == first_name && author.last_name == last_name
+        existing_author = author
+        break
+      end
+    end
+
+    existing_author
   end
 
   def display_msg
