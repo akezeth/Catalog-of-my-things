@@ -135,6 +135,12 @@ Example:
 - Twitter: [@twitterhandle](https://twitter.com/Binod_ironLad)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/binodbhusal)
 
+👤 **Hafiz Massam Tabraiz Khan**
+
+- GitHub: [@githubhandle](https://github.com/HafizMassamTabraizKhan)
+- Twitter: [@twitterhandle](https://twitter.com/MassamTabraiz)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/hafiz-massam-tabraiz-khan-167644255/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
