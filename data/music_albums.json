@@ -1,3 +1,26 @@
 [
-
+  {
+    "id": 2873,
+    "publish_date": "2023-08-08",
+    "on_spotify": true,
+    "genre": "Raggae"
+  },
+  {
+    "id": 8695,
+    "publish_date": "2022-05-05",
+    "on_spotify": false,
+    "genre": "Rock"
+  },
+  {
+    "id": 1712,
+    "publish_date": "1999-03-03",
+    "on_spotify": true,
+    "genre": "Rock"
+  },
+  {
+    "id": 1779,
+    "publish_date": "2005-07-04",
+    "on_spotify": true,
+    "genre": "Slow"
+  }
 ]

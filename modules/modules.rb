@@ -24,8 +24,8 @@ module Modules
   def load_collection
     load_books
     load_labels
-    load_music_albums
     load_genres
+    load_music_albums
     load_authors
     load_games
   end
