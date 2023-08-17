@@ -9,6 +9,7 @@ module LoadGameAndAuthorData
     authors_data.each do |author_data|
       author = Author.new(first_name: author_data['first_name'], last_name: author_data['last_name'])
       author.id = author_data['id']
+
       @authors << author
     end
   end
@@ -26,6 +27,7 @@ module LoadGameAndAuthorData
         multiplayer: game_data[:multiplayer],
         played_at_date: game_data[:played_at_date]
       )
+
       @games << game
     end
   end

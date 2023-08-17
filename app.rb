@@ -1,4 +1,3 @@
-require_relative 'classes/gameapp'
 require_relative 'classes/author'
 require_relative 'classes/game'
 require_relative 'classes/item'
@@ -55,7 +54,6 @@ class App
     else
       loop do
         add_game
-        add_author
         display_msg
         break unless continue_option == 'y'
       end

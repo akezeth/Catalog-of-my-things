@@ -12,14 +12,14 @@ module SaveBookAndLabelData
         publisher: book.publisher,
         publish_date: book.publish_date,
         id: book.id,
-        label: book.label.title
+        label: book.label
       }
     end
     save_to_file('data/book.json', books_hash)
   end
 
   def save_label
-    label_hash = @label.map do |label|
+    label_hash = @labels.map do |label|
       {
         id: label.id,
         color: label.color,
