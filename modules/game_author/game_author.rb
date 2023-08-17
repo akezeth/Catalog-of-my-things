@@ -62,6 +62,19 @@ module GameAndAuthor
     end
   end
 
+  def find_existing_author(first_name, last_name)
+    existing_author = nil
+
+    @authors.each do |author|
+      if author.first_name == first_name && author.last_name == last_name
+        existing_author = author
+        break
+      end
+    end
+
+    existing_author
+  end
+
   def display_msg
     puts ' ✅ Game Added Successfully'
     puts '===================================================================================================='
