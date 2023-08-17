@@ -6,7 +6,7 @@ module SaveGameAndAuthorData
     File.open('data/authors.json', 'w') do |_file|
       File.write('data/authors.json', JSON.pretty_generate(@authors.map(&:to_hash)))
     end
-    puts 'Author data saved successfully'
+    # puts 'Author data saved successfully'
   rescue StandardError => e
     puts "Error saving author data: #{e.message}"
   end
@@ -16,7 +16,7 @@ module SaveGameAndAuthorData
     File.open('data/games.json', 'w') do |_file|
       File.write('data/games.json', JSON.pretty_generate(@games.map(&:to_hash)))
     end
-    puts 'Game Data saved successfully'
+    # puts 'Game Data saved successfully'
   rescue StandardError => e
     puts "Error Saving game data: #{e.message}"
   end
