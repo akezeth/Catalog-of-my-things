@@ -11,10 +11,10 @@ module BookAndLabel
   end
 
   def list_all_labels
-    if @label.empty?
+    if @labels.empty?
       puts 'No labels available.'
     else
-      @label.each_with_index do |label, index|
+      @labels.each_with_index do |label, index|
         puts "#{index}) Label Title: #{label.title}, Label Color: #{label.color}"
       end
     end
@@ -24,7 +24,7 @@ module BookAndLabel
     publish_date = get_input('Please Enter publish date in following format: yyyy/mm/dd')
     publisher = get_input('Enter Publisher')
     cover_state = get_input('Enter Cover state')
-    book = Book.new(cover_state, publisher, publish_date)
+    book = Book.new(cover_state: cover_state, publisher: publisher, publish_date: publish_date)
     @books << book
     label = add_label(book)
     book.add_label(label)
@@ -33,11 +33,11 @@ module BookAndLabel
     gets.chomp
   end
 
-  def add_label(book)
+  def add_label(_book)
     puts 'Add a label'
     color = get_input('Enter Label Color')
     title = get_input('Enter Label title')
-    label = Label.new(color, title, book.id)
+    label = Label.new(color: color, title: title)
     @label << label
     label
   end
