@@ -37,7 +37,7 @@
 
 
 <p align="center">
-  <img src="./images/catalog_of_my_things.png" alt="C=UML class diagram for catalog of things" />
+  <img src="./image/catalog_of_my_things.png" alt="C=UML class diagram for catalog of things" />
 </p>
 
 ## 🛠 Built With <a name="built-with"></a>
