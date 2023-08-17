@@ -8,13 +8,13 @@ class App
   include Modules
 
   def initialize
-    load_collection
     @books = []
     @labels = []
     @music_albums = []
     @genres = []
     @games = []
     @authors = []
+    load_collection
   end
 
   def option_methods(option)
