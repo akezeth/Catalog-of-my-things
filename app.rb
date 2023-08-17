@@ -1,4 +1,3 @@
-require_relative 'classes/gameapp'
 require_relative 'classes/author'
 require_relative 'classes/game'
 require_relative 'classes/item'
@@ -8,13 +7,13 @@ class App
   include Modules
 
   def initialize
-    load_collection
     @books = []
     @labels = []
     @music_albums = []
     @genres = []
     @games = []
     @authors = []
+    load_collection
   end
 
   def option_methods(option)
