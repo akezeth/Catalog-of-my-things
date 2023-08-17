@@ -2,10 +2,10 @@ require_relative 'classes/gameapp'
 require_relative 'classes/author'
 require_relative 'classes/game'
 require_relative 'classes/item'
-require_relative '../modules/module'
+require_relative 'modules/modules'
 
 class App
-  include Module
+  include Modules
 
   def initialize
     load_collection

@@ -1,15 +1,15 @@
-require_relative '../book_label/book_label'
-require_relative '../book_label/load_book_label'
-require_relative '../book_label/save_book_label'
-require_relative '../music_genre/add_music_album'
-require_relative '../music_genre/list_genres'
-require_relative '../music_genre/list_music_albums'
-require_relative '../music_genre/music_albums_genre_storage'
-require_relative '../game_author/game_author'
-require_relative '../game_author/load_game_author'
-require_relative '../game_author/save_game_author'
+require_relative 'book_label/book_label'
+require_relative 'book_label/load_book_label'
+require_relative 'book_label/save_book_label'
+require_relative 'music_genre/add_music_album'
+require_relative 'music_genre/list_genres'
+require_relative 'music_genre/list_music_albums'
+require_relative 'music_genre/music_albums_genre_storage'
+require_relative 'game_author/game_author'
+require_relative 'game_author/load_game_author'
+require_relative 'game_author/save_game_author'
 
-module Module
+module Modules
   include BookAndLabel
   include LoadBookAndLabelData
   include SaveBookAndLabelData

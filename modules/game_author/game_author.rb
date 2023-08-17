@@ -1,6 +1,4 @@
 require 'date'
-require_relative 'author'
-require_relative 'game'
 
 module GameAndAuthor
   # Add authors-----------------------------
