@@ -54,7 +54,6 @@ class App
     else
       loop do
         add_game
-        add_author
         display_msg
         break unless continue_option == 'y'
       end

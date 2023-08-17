@@ -34,6 +34,8 @@ module GameAndAuthor
       multiplayer: multiplayer,
       played_at_date: last_played_date
     )
+    author = add_author
+    game.author = author
     @games << game
   end
 
