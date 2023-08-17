@@ -4,8 +4,8 @@ module BookAndLabel
       puts 'No books availabel.'
     else
       @books.each_with_index do |book, index|
-        label_title = book.label ? book.label.title : 'N/A'
-        puts "#{index}) Publisher: #{book.publisher}, Publish Date: #{book.publish_date}, Label: #{label_title}"
+        # label_title = book.label ? book.label.title : 'N/A'
+        puts "#{index + 1}) Publisher: #{book.publisher}, Publish Date: #{book.publish_date}, Label: #{book.label}"
       end
     end
   end
@@ -15,7 +15,7 @@ module BookAndLabel
       puts 'No labels available.'
     else
       @labels.each_with_index do |label, index|
-        puts "#{index}) Label Title: #{label.title}, Label Color: #{label.color}"
+        puts "#{index + 1}) Label Title: #{label.title}, Label Color: #{label.color}"
       end
     end
   end
@@ -25,12 +25,13 @@ module BookAndLabel
     publisher = get_input('Enter Publisher')
     cover_state = get_input('Enter Cover state')
     book = Book.new(cover_state: cover_state, publisher: publisher, publish_date: publish_date)
-    @books << book
     label = add_label(book)
-    book.add_label(label)
+    # book.add_label(label)
+    book.label = label.title
+    @books << book
     puts 'Book album Added Successfully'
-    puts 'Press Enter to continue!'
-    gets.chomp
+    # puts 'Press Enter to continue!'
+    # gets.chomp
   end
 
   def add_label(_book)
@@ -38,7 +39,7 @@ module BookAndLabel
     color = get_input('Enter Label Color')
     title = get_input('Enter Label title')
     label = Label.new(color: color, title: title)
-    @label << label
+    @labels << label
     label
   end
 

@@ -1,4 +1,6 @@
 require 'json'
+require_relative '../../classes/book'
+require_relative '../../classes/label'
 
 module LoadBookAndLabelData
   def load_data_from_file(file_name)
@@ -13,9 +15,9 @@ module LoadBookAndLabelData
     label_hash = load_data_from_file('data/label.json')
 
     label_hash.each do |label|
-      label_obj = Label.new(label['color'], label['title'])
-      label_obj.id = label['id']
-      @label << label_obj
+      label_obj = Label.new(color: label['color'], title: label['title'], id: label['id'])
+      # label_obj.id = label['id']
+      @labels << label_obj
     end
   end
 
@@ -25,9 +27,10 @@ module LoadBookAndLabelData
 
     book_hash = load_data_from_file('data/book.json')
     book_hash.each do |book|
-      book_obj = Book.new(book['cover_state'], book['publisher'], book['publish_date'], book['id'])
-      label_obj = @label.find { |label| label.title == book['label'] }
-      book_obj.add_label(label_obj)
+      book_obj = Book.new(cover_state: book['cover_state'], publisher: book['publisher'],
+                          publish_date: book['publish_date'], id: book['id'], label: book['label'])
+      # label_obj = @labels.find { |label| label.title == book['label'] }
+      # book_obj.add_label(label_obj)
       @books << book_obj
     end
   end
