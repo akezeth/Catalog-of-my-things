@@ -1,4 +1,6 @@
 require 'json'
+require_relative '../../classes/music_album'
+require_relative '../../classes/genre'
 
 module MusicGenreStorage
   def save_file(file_name, data)
@@ -6,12 +8,24 @@ module MusicGenreStorage
   end
 
   def save_music_albums
-    json_data = @music_albums.map(&:to_hash)
+    json_data = @music_albums.map do |music|
+      {
+        id: music.id,
+        publish_date: music.publish_date,
+        on_spotify: music.on_spotify,
+        genre: music.genre.name
+      }
+    end
     save_file('data/music_albums.json', json_data)
   end
 
   def save_genres
-    json_data = @genres.map(&:to_hash)
+    json_data = @genres.map do |genre|
+      {
+        id: genre.id,
+        name: genre.name
+      }
+    end
     save_file('data/genres.json', json_data)
   end
 
@@ -27,8 +41,7 @@ module MusicGenreStorage
     music_albums_hash = load_data_from_file('data/music_albums.json')
 
     music_albums_hash.each do |music|
-      music_obj = MusicAlbum.new(publish_date: music['publish_date'], on_spotify: music['on_spotify'],
-                                 id: music['id'])
+      music_obj = MusicAlbum.new(id: music['id'], publish_date: music['publish_date'], on_spotify: music['on_spotify'])
       genre_obj = @genres.find { |genre| genre.name == music['genre'] }
       music_obj.add_genre(genre_obj)
       @music_albums << music_obj
