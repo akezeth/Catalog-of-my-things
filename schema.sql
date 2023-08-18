@@ -26,7 +26,7 @@ CREATE TABLE music_album
   on_spotify BOOLEAN,
   publish_date DATE,
   archived BOOLEAN,
-  genre_id INT REFERENCES genre(id)
+  genre_id INT REFERENCES genre(id),
   label_id INT REFERENCES labels(id),
   author_ID INT REFERENCES authors(id)
 );
@@ -52,5 +52,9 @@ CREATE TABLE games (
   multiplayer BOOLEAN,
   played_at_date DATE,
   author_id INT NOT NULL,
-  FOREIGN KEY (author_id) REFERENCES authors(id)
+  genre_id INT NOT NULL,
+  label_id INT NOT NULL,
+  FOREIGN KEY (author_id) REFERENCES authors(id),
+  FOREIGN KEY (genre_id) REFERENCES genre(id),
+  FOREIGN KEY (label_id) REFERENCES labels(id)
 );
