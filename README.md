@@ -13,7 +13,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    - [💻 Demo video](#demo-video)
+    - [💻 Walkthrough Video](#demo-video)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -69,11 +69,11 @@
 
 <!-- Demo -->
 
-### Video demo <a name="demo-video"></a>
+### Video Walkthrough <a name="demo-walkthrough"></a>
 
 Here is the link to the video demo :
 
-<a href="example.com">Video demo</a>
+<a href="https://drive.google.com/file/d/18Vfb9ouetnkUHH4E4bgJsKiMzeBsxxEH/view?usp=sharing">Video walkthrough</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
