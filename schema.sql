@@ -27,6 +27,8 @@ CREATE TABLE music_album
   publish_date DATE,
   archived BOOLEAN,
   genre_id INT REFERENCES genre(id)
+  label_id INT REFERENCES labels(id),
+  author_ID INT REFERENCES authors(id)
 );
 
 CREATE TABLE genre
